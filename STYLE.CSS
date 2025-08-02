@@ -1,0 +1,93 @@
+body {
+  background: #ffeef2;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.carta {
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 600px;
+  text-align: center;
+  transform: scale(0);
+  animation: abrirCarta 1.5s ease-out forwards;
+}
+
+@keyframes abrirCarta {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.carta h1 {
+  color: #ff69b4;
+  font-size: 2em;
+}
+
+.carta p {
+  color: #444;
+  font-size: 1.2em;
+  margin-top: 15px;
+}
+
+.assinatura {
+  margin-top: 30px;
+  font-style: italic;
+  color: #ff1493;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff6b81;
+  transform: rotate(45deg);
+  animation: subir 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff6b81;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -10px;
+}
+
+@keyframes subir {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+    transform: translateX(0) scale(1);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateX(-50px) scale(1.5);
+  }
+}
